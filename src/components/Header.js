@@ -5,14 +5,14 @@ export default () => (
   <header className="Header-header">
     <h1 className="Header-h1">Tryout Demo</h1>
     <nav className="Header-nav">
-      <NavLink
+      {/* <NavLink
         exact
         to="/"
         className="Header-navLink"
         activeClassName="Header-isActive"
       >
         Home
-      </NavLink>
+      </NavLink> */}
       <NavLink to="/about" className="Header-navLink" activeClassName="Header-isActive">
         About
       </NavLink>

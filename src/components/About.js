@@ -12,7 +12,7 @@ const Authors = () => {
       try {
         const result = await client.request(query);
         console.log(result);
-        setHTMLs(result.allHtmlCodes[0].html[0].markdownEnabled);
+        setHTMLs(result.allHtmlCodes[1].html[0].markdownEnabled);
         setIsFetching(false);
       } catch (error) {
         console.error(JSON.stringify(error, undefined, 2));
@@ -42,25 +42,13 @@ const Authors = () => {
                 <p>{author.description}</p>
               </div>
             ))} */}
-          <div dangerouslySetInnerHTML={{ __html: HTMLs }}></div>
-          <div>{HTMLs}</div>
+
+          <div dangerouslySetInnerHTML={{ __html: HTMLs }} />
         </div>
       )}
     </section>
   );
 };
-
-// {
-//   "allHtmlCodes": [
-//     {
-//       "html": [
-//         {
-//           "markdownEnabled": "<p><strong>HELLOW</strong></p>\n"
-//         }
-//       ]
-//     }
-//   ]
-// }
 
 const query = `
 query htmls {
