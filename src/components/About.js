@@ -12,7 +12,7 @@ const Authors = () => {
       try {
         const result = await client.request(query);
         console.log(result);
-        // setHTMLs(result.HTMLs);
+        setHTMLs(result.allHtmlCodes[0].html[0].markdownEnabled);
         setIsFetching(false);
       } catch (error) {
         console.error(JSON.stringify(error, undefined, 2));
@@ -43,11 +43,24 @@ const Authors = () => {
               </div>
             ))} */}
           check console.
+          {HTMLs}
         </div>
       )}
     </section>
   );
 };
+
+// {
+//   "allHtmlCodes": [
+//     {
+//       "html": [
+//         {
+//           "markdownEnabled": "<p><strong>HELLOW</strong></p>\n"
+//         }
+//       ]
+//     }
+//   ]
+// }
 
 const query = `
 query htmls {
