@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import client from "../client.js";
 import { Image } from "react-datocms";
-import Parser from "html-to-react";
 
 const Authors = () => {
-  var htmlToReactParser = new HtmlToReactParser();
   const [HTMLs, setHTMLs] = useState();
   const [isFetching, setIsFetching] = useState(false);
 
@@ -25,8 +23,6 @@ const Authors = () => {
     fetchData();
   }, []);
 
-  const newElement = htmlToReactParser.parse(HTMLs);
-
   return (
     <section>
       {isFetching ? (
@@ -46,10 +42,8 @@ const Authors = () => {
                 <p>{author.description}</p>
               </div>
             ))} */}
-          check console.
           <div dangerouslySetInnerHTML={{ __html: HTMLs }}></div>
           <div>{HTMLs}</div>
-          <div>{newElement}</div>
         </div>
       )}
     </section>
