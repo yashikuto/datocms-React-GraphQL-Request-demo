@@ -42,7 +42,6 @@ const Authors = () => {
                 <p>{author.description}</p>
               </div>
             ))} */}
-
           <div dangerouslySetInnerHTML={{ __html: HTMLs }} />
         </div>
       )}
